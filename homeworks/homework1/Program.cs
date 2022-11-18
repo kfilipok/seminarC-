@@ -5,13 +5,13 @@ a = 5; b = 7 -> max = 7
 a = 2 b = 10 -> max = 10
 a = -9 b = -3 -> max = -3 */
 Console.WriteLine("Enter a 1st number");
-int num1 = Convert.ToInt32(Console.ReadLine());
+int a = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Enter f 2-d number");
-int num2 = Convert.ToInt32(Console.ReadLine());
-if (num1 > num2){
-    Console.WriteLine($"Number {num1} is bigger than number {num2}");
-}else if(num1 < num2){
-    Console.WriteLine($"number {num1} is smaller than number {num2}");
+int b = Convert.ToInt32(Console.ReadLine());
+if (a > b){
+    Console.WriteLine($"a = {a}; b = {b} -> max {a}");
+}else if(a < b){
+    Console.WriteLine($"a = {a}; b = {b} -> max {b}");
 }else{
     Console.WriteLine($"nubers are similar");
 }
