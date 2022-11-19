@@ -24,27 +24,35 @@ a = -9 b = -3 -> max = -3 */
 44 5 78 -> 78
 22 3 9 -> 22 */
 
-Console.WriteLine("Напишите программу, которая принимает на вход три числа и выдаёт максимальное из этих чисел.");
-Console.WriteLine("Enter a 1-st number");
-int num1 = Convert.ToInt32(Console.ReadLine());
-int max = num1;
-Console.WriteLine("Enter a 2-nd number");
-int num2 = Convert.ToInt32(Console.ReadLine());
-if (num2 > max){
-    max = num2;
-}
-Console.WriteLine("Enter a 3-d number");
-int num3 = Convert.ToInt32(Console.ReadLine());
-if (num3 > max){
-    max = num3;
-}
-Console.WriteLine($"Entered numbers: {num1} {num2} {num3}, max -> {max}");
+// Console.WriteLine("Напишите программу, которая принимает на вход три числа и выдаёт максимальное из этих чисел.");
+// Console.WriteLine("Enter a 1-st number");
+// int num1 = Convert.ToInt32(Console.ReadLine());
+// int max = num1;
+// Console.WriteLine("Enter a 2-nd number");
+// int num2 = Convert.ToInt32(Console.ReadLine());
+// if (num2 > max){
+//     max = num2;
+// }
+// Console.WriteLine("Enter a 3-d number");
+// int num3 = Convert.ToInt32(Console.ReadLine());
+// if (num3 > max){
+//     max = num3;
+// }
+// Console.WriteLine($"Entered numbers: {num1} {num2} {num3}, max -> {max}");
 
 /* Задача 6: Напишите программу, которая на вход принимает число и выдаёт, является ли число чётным (делится ли оно на два без остатка).
 
 4 -> да
 -3 -> нет
 7 -> нет */
+Console.WriteLine("При вводе числа программа выдает четное ли это число");
+Console.WriteLine("Enter a number");
+int num = Convert.ToInt32(Console.ReadLine());
+if (num % 2 > 0){
+    Console.WriteLine($"Number {num} is odd");
+}else{
+    Console.WriteLine($"Number {num} is even");
+}
 
 /* Задача 8: Напишите программу, которая на вход принимает число (N), а на выходе показывает все чётные числа от 1 до N.
 
