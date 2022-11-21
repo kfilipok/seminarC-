@@ -18,28 +18,37 @@
 // 78 -> третьей цифры нет
 
 // 32679 -> 6
-// void Find3dDigit(int num){
-//     count = 1;
-//     while (count < num){
-//         residue = num % 10;
-//         newNum = num / 10;
-//         count ++;
-//     }
-// }
+void Find3dDigit(int num){
+    if (num > 99)
+    {
+        int divNum = num;
+        int reduse = 0;
+        while(divNum > 99)
+        {
+            reduse = divNum % 10;
+            divNum = divNum / 10;
+        }
+        Console.WriteLine($"3-d digit is {reduse}, number is {num}");
+    } else{
+        Console.WriteLine("3-d digit is empty in this number");
+    } 
+}
+
+Find3dDigit(101);
 // Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
 
 // 6 -> да
 // 7 -> да
 // 1 -> нет
 
-bool WeekDay(int day){
-    if (day == 6 || day == 7)
-    {
-        return true;
-    }else
-    {
-        return false;
-    }
-}
+// bool WeekDay(int day){
+//     if (day == 6 || day == 7)
+//     {
+//         return true;
+//     }else
+//     {
+//         return false;
+//     }
+// }
 
-Console.WriteLine(WeekDay(1));
+// Console.WriteLine(WeekDay(1));
