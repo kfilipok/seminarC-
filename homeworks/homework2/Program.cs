@@ -1,15 +1,11 @@
 ﻿// Задача 10: Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
 
-// 456 -> 5
-// 782 -> 8
-// 918 -> 1
-
-// int SecondDigit(int num){
-//     int residue = num % 100;
-//     return residue / 10;
-// }
-// int n = 899;
-// Console.WriteLine($"{n} -> {SecondDigit(n)}");
+int SecondDigit(int num){
+    int residue = num % 100;
+    return residue / 10;
+}
+int n = 899;
+Console.WriteLine($"{n} -> {SecondDigit(n)}");
 
 // Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
 
@@ -41,14 +37,14 @@ Find3dDigit(101);
 // 7 -> да
 // 1 -> нет
 
-// bool WeekDay(int day){
-//     if (day == 6 || day == 7)
-//     {
-//         return true;
-//     }else
-//     {
-//         return false;
-//     }
-// }
+bool WeekDay(int day){
+    if (day == 6 || day == 7)
+    {
+        return true;
+    }else
+    {
+        return false;
+    }
+}
 
-// Console.WriteLine(WeekDay(1));
+Console.WriteLine(WeekDay(1));
