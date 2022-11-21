@@ -4,12 +4,12 @@
 // 782 -> 8
 // 918 -> 1
 
-int SecondDigit(int num){
-    int residue = num % 100;
-    return residue / 10;
-}
-int n = 899;
-Console.WriteLine($"{n} -> {SecondDigit(n)}");
+// int SecondDigit(int num){
+//     int residue = num % 100;
+//     return residue / 10;
+// }
+// int n = 899;
+// Console.WriteLine($"{n} -> {SecondDigit(n)}");
 
 // Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
 
@@ -18,9 +18,28 @@ Console.WriteLine($"{n} -> {SecondDigit(n)}");
 // 78 -> третьей цифры нет
 
 // 32679 -> 6
-
+// void Find3dDigit(int num){
+//     count = 1;
+//     while (count < num){
+//         residue = num % 10;
+//         newNum = num / 10;
+//         count ++;
+//     }
+// }
 // Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
 
 // 6 -> да
 // 7 -> да
 // 1 -> нет
+
+bool WeekDay(int day){
+    if (day == 6 || day == 7)
+    {
+        return true;
+    }else
+    {
+        return false;
+    }
+}
+
+Console.WriteLine(WeekDay(1));
