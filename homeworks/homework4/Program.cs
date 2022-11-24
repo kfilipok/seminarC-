@@ -4,20 +4,22 @@
 
 // 2, 4 -> 16
 
-int Inv(int num, int inv){
-    int result = 1;
-    for (int i = 1; i <= inv; i++)
-    {
-        result = result * num;
-    }
-    return result;
-}
-Console.WriteLine("Введите число");
-int a = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите степень возведения");
-int inv = Convert.ToInt32(Console.ReadLine());
+// int Inv(int num, int inv){
+//     int result = 1;
+//     for (int i = 1; i <= inv; i++)
+//     {
+//         result = result * num;
+//     }
+//     return result;
+// }
+// Console.WriteLine("Введите число");
+// int a = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите степень возведения");
+// int inv = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine($"число {a}  в степени {inv} равно {Inv(a, inv)}");
+// Console.WriteLine($"число {a}  в степени {inv} равно {Inv(a, inv)}");
+
+
 // Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
 
 // 452 -> 11
@@ -26,6 +28,21 @@ Console.WriteLine($"число {a}  в степени {inv} равно {Inv(a, i
 
 // 9012 -> 12
 
+int SumOfDigits(int num){
+    int sum = 0;
+    int digit = 0;
+    int mNum = num;
+    while (mNum > 0)
+    {
+        digit = mNum % 10;
+        mNum = mNum / 10;
+        sum += digit;
+    }
+    return sum;
+}
+ Console.WriteLine("Введите Число");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine($"Сумма цифр числа {n} составляет {SumOfDigits(n)}");
 
 
 // Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
