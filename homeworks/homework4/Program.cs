@@ -27,7 +27,9 @@
 // 82 -> 10
 
 // 9012 -> 12
-
+Console.WriteLine("Введите Число");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine($"Сумма цифр числа {n} составляет {SumOfDigits(n)}");
 int SumOfDigits(int num){
     int sum = 0;
     int digit = 0;
@@ -40,10 +42,6 @@ int SumOfDigits(int num){
     }
     return sum;
 }
- Console.WriteLine("Введите Число");
-int n = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine($"Сумма цифр числа {n} составляет {SumOfDigits(n)}");
-
 
 // Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
 
