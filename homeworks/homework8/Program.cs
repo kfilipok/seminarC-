@@ -8,24 +8,24 @@
 // 7 4 2 1
 // 9 5 3 2
 // 8 4 4 2
-int [,] CreateRandonm2DArray(){
-    Console.Write("Введите Количетво строк в массиве: ");
-    int rows = Convert.ToInt32(Console.ReadLine());
-    Console.Write("Введите Количетво столбцов в массиве: ");
-    int columns = Convert.ToInt32(Console.ReadLine());
-    Console.Write("Введите минимальное значение ячейки массива: ");
-    int minValue = Convert.ToInt32(Console.ReadLine());
-    Console.Write("Введите максимальное значение ячейки массива: ");
-    int maxValue = Convert.ToInt32(Console.ReadLine());
+// int [,] CreateRandonm2DArray(){
+//     Console.Write("Введите Количетво строк в массиве: ");
+//     int rows = Convert.ToInt32(Console.ReadLine());
+//     Console.Write("Введите Количетво столбцов в массиве: ");
+//     int columns = Convert.ToInt32(Console.ReadLine());
+//     Console.Write("Введите минимальное значение ячейки массива: ");
+//     int minValue = Convert.ToInt32(Console.ReadLine());
+//     Console.Write("Введите максимальное значение ячейки массива: ");
+//     int maxValue = Convert.ToInt32(Console.ReadLine());
 
-    int [,] newArray = new  int[rows, columns];
-    for (int i = 0; i < rows; i++){
-        for (int j = 0; j < columns; j++){
-            newArray[i, j] = new Random().Next(minValue, maxValue + 1);
-        }
-    }
-    return newArray;
-}
+//     int [,] newArray = new  int[rows, columns];
+//     for (int i = 0; i < rows; i++){
+//         for (int j = 0; j < columns; j++){
+//             newArray[i, j] = new Random().Next(minValue, maxValue + 1);
+//         }
+//     }
+//     return newArray;
+// }
 
 void Show2DArray(int [,] arr){
     Console.WriteLine("-----------------------Начало массива----------------------------");
@@ -71,6 +71,7 @@ void Show2DArray(int [,] arr){
 // Array2DSort(arr);
 // Console.WriteLine("Отсортированный массив:");
 // Show2DArray(arr);
+
 // // Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
 // // Например, задан массив:
 // // 1 4 7 2
@@ -110,7 +111,7 @@ void Show2DArray(int [,] arr){
 // // 18 20
 // // 15 18
 // int [,] arr2 = CreateRandonm2DArray();
-
+// Show2DArray(arr2);
 // int[,] MatrixMultiply(int [,] matrix1, int[,] matrix2){
 //     if(matrix1.GetLength(0) != matrix2.GetLength(0) || matrix1.GetLength(1) != matrix2.GetLength(1)){
 //         Console.WriteLine("Массивы должны быть матрицами и одинаковыми");
@@ -130,6 +131,7 @@ void Show2DArray(int [,] arr){
 //     }
 // }
 // Show2DArray(MatrixMultiply(arr, arr2));
+
 // Задача 60. ...Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно
 // выводить массив, добавляя индексы каждого элемента.
 // Массив размером 2 x 2 x 2
@@ -154,7 +156,7 @@ void Show2DArray(int [,] arr){
 //     for (int i = 0; i < arr.GetLength(0); i++){
 //         for (int j = 0; j < arr.GetLength(1); j++){
 //             for (int k = 0; k < arr.GetLength(2); k++){
-//                Console.Write($" {arr[i, j, k]} ");
+//                Console.Write($" {arr[i, j, k]} ({i}, {j}, {k})");
 //             }
 //             Console.WriteLine();
 //         }
@@ -169,36 +171,67 @@ void Show2DArray(int [,] arr){
 // 12 13 14 05
 // 11 16 15 06
 // 10 09 08 07
-// int [,] fillArray(int size){
-//     int dig = 1;
-//     int row = 0;
-//     int col = 0;
-//     int[,] arr = new int[size+1, size+1];
-//     for (int i = 0; i < size; i++){
-//         arr[row, i] = dig;
-//         dig++;
-//         col++;
-//     }
-//     // size--;
-//     for (int i = 0; i < size; i++){
-//         arr[i, col] = dig;
-//         dig++;
-//         row++;
-//     }
-//     // size--;
-//     for (int i = size; i > size; i--){
-//         arr[row, i] = dig;
-//         dig++;
-//         col--;
-//     }
-//     size--;
-//     for (int i = size; i > size; i--){
-//         arr[i, col] = dig;
-//         dig++;
-//         row--;
-//     }
-//     return arr;
-// }
 
-// int [,] arr4 = fillArray(4);
-// Show2DArray(arr4);
+// 0,0	  0,1	0,2	  0,3
+// 1,0	  1,1	1,2	  1,3
+// 2,0	  2,1	2,2	  2,3
+// 3,0	  3,1	3,2	  3,4
+
+int [,] fillArray(int size){
+    int col = 0;
+    int row = 0;
+    int dig = 0;
+
+    int[,] arr = new int[size, size];
+    
+    for (int i = col ; i < size; i++){
+        arr[row, col++] = dig++;
+    }
+    col--;
+    row++;
+
+    for (int i = row; i < size; i++)
+    {
+        arr[row++, col] = dig++;
+    }
+    row--;
+    col--;
+   
+    for (int i = col; i <= size; i++)
+    {
+        arr[row, col--] = dig++;
+    }
+    if(col < 0) col = 0;
+    row--;
+    for (int i = row; i < size; i++)
+    {
+        arr[row--, col] = dig++;
+    }
+    row++;
+    col++;
+    size--;
+    
+    for (int i = col ; i < size; i++){
+        arr[row, col++] = dig++;
+    }
+    col--;
+    row++;
+
+    for (int i = row; i < size; i++)
+    {
+        arr[row++, col] = dig++;
+    }
+    row--;
+    col--;
+    // Console.WriteLine($"row= {row} col = {col} dig = {dig} size = {size}");
+    for (int i = col; i < size-1; i++)
+    {
+        arr[row, col--] = dig++;
+    }
+
+
+    return arr;
+}
+
+int [,] arr4 = fillArray(4);
+Show2DArray(arr4);
