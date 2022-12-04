@@ -8,24 +8,24 @@
 // 7 4 2 1
 // 9 5 3 2
 // 8 4 4 2
-// int [,] CreateRandonm2DArray(){
-//     Console.Write("Введите Количетво строк в массиве: ");
-//     int rows = Convert.ToInt32(Console.ReadLine());
-//     Console.Write("Введите Количетво столбцов в массиве: ");
-//     int columns = Convert.ToInt32(Console.ReadLine());
-//     Console.Write("Введите минимальное значение ячейки массива: ");
-//     int minValue = Convert.ToInt32(Console.ReadLine());
-//     Console.Write("Введите максимальное значение ячейки массива: ");
-//     int maxValue = Convert.ToInt32(Console.ReadLine());
+int [,] CreateRandonm2DArray(){
+    Console.Write("Введите Количетво строк в массиве: ");
+    int rows = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Введите Количетво столбцов в массиве: ");
+    int columns = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Введите минимальное значение ячейки массива: ");
+    int minValue = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Введите максимальное значение ячейки массива: ");
+    int maxValue = Convert.ToInt32(Console.ReadLine());
 
-//     int [,] newArray = new  int[rows, columns];
-//     for (int i = 0; i < rows; i++){
-//         for (int j = 0; j < columns; j++){
-//             newArray[i, j] = new Random().Next(minValue, maxValue + 1);
-//         }
-//     }
-//     return newArray;
-// }
+    int [,] newArray = new  int[rows, columns];
+    for (int i = 0; i < rows; i++){
+        for (int j = 0; j < columns; j++){
+            newArray[i, j] = new Random().Next(minValue, maxValue + 1);
+        }
+    }
+    return newArray;
+}
 
 void Show2DArray(int [,] arr){
     Console.WriteLine("-----------------------Начало массива----------------------------");
@@ -169,36 +169,36 @@ void Show2DArray(int [,] arr){
 // 12 13 14 05
 // 11 16 15 06
 // 10 09 08 07
-int [,] fillArray(int size){
-    int dig = 1;
-    int row = 0;
-    int col = 0;
-    int[,] arr = new int[size+1, size+1];
-    for (int i = 0; i < size; i++){
-        arr[row, i] = dig;
-        dig++;
-        col++;
-    }
-    // size--;
-    for (int i = 0; i < size; i++){
-        arr[i, col] = dig;
-        dig++;
-        row++;
-    }
-    // size--;
-    for (int i = size; i > size; i--){
-        arr[row, i] = dig;
-        dig++;
-        col--;
-    }
-    size--;
-    for (int i = size; i > size; i--){
-        arr[i, col] = dig;
-        dig++;
-        row--;
-    }
-    return arr;
-}
+// int [,] fillArray(int size){
+//     int dig = 1;
+//     int row = 0;
+//     int col = 0;
+//     int[,] arr = new int[size+1, size+1];
+//     for (int i = 0; i < size; i++){
+//         arr[row, i] = dig;
+//         dig++;
+//         col++;
+//     }
+//     // size--;
+//     for (int i = 0; i < size; i++){
+//         arr[i, col] = dig;
+//         dig++;
+//         row++;
+//     }
+//     // size--;
+//     for (int i = size; i > size; i--){
+//         arr[row, i] = dig;
+//         dig++;
+//         col--;
+//     }
+//     size--;
+//     for (int i = size; i > size; i--){
+//         arr[i, col] = dig;
+//         dig++;
+//         row--;
+//     }
+//     return arr;
+// }
 
-int [,] arr4 = fillArray(4);
-Show2DArray(arr4);
+// int [,] arr4 = fillArray(4);
+// Show2DArray(arr4);
